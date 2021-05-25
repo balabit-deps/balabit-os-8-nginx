@@ -1,3 +1,14 @@
+nginx (1.18.0-0ubuntu1.2) focal-security; urgency=medium
+
+  * SECURITY UPDATE: DNS Resolver issues
+    - debian/patches/CVE-2021-23017-1.patch: fixed off-by-one write in
+      src/core/ngx_resolver.c.
+    - debian/patches/CVE-2021-23017-2.patch: fixed off-by-one read in
+      src/core/ngx_resolver.c.
+    - CVE-2021-23017
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 25 May 2021 13:10:38 -0400
+
 nginx (1.18.0-0ubuntu1) focal; urgency=medium
 
   * Stable Release Update for Version String (LP: #1875231)
