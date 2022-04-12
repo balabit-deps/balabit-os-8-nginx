@@ -1,3 +1,28 @@
+nginx (1.18.0-0ubuntu1.3) focal-security; urgency=medium
+
+  * SECURITY UPDATE: ALPACA TLS issue
+    - debian/patches/CVE-2021-3618.patch: specify the number of
+      errors after which the connection is closed in
+      src/mail/ngx_mail.h, src/mail/ngx_mail_core_module.c and
+      src/mail/ngx_mail_handler.c.
+    - CVE-2021-3618
+  * SECURITY UPDATE: request mutation by unsafe characters
+    - Add input validation to requests in Lua module in
+      debian/modules/http-lua/src/ngx_http_lua_control.c,
+      debian/modules/http-lua/src/ngx_http_lua_headers_in.c,
+      debian/modules/http-lua/src/ngx_http_lua_headers_out.c,
+      debian/modules/http-lua/src/ngx_http_lua_uri.c,
+      debian/modules/http-lua/src/ngx_http_lua_util.h and
+      debian/modules/http-lua/src/ngx_http_lua_util.h.
+    - CVE-2020-36309
+  * SECURITY UPDATE: request smuggling in ngx.location.capture
+    - Add manual crafting of Content-Length in case request is 
+      chunked in 
+      debian/modules/http-lua/src/ngx_http_lua_subrequest.c.
+    - CVE-2020-11724
+
+ -- David Fernandez Gonzalez <david.fernandezgonzalez@canonical.com>  Tue, 12 Apr 2022 10:04:16 +0200
+
 nginx (1.18.0-0ubuntu1.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: DNS Resolver issues

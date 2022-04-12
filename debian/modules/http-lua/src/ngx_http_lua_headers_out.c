@@ -483,6 +483,14 @@ ngx_http_lua_set_output_header(ngx_http_request_t *r, ngx_str_t key,
     ngx_http_lua_set_header_t        *handlers = ngx_http_lua_set_handlers;
     ngx_uint_t                        i;
 
+    if (ngx_http_lua_check_unsafe_string(r, key.data, key.len,
+                                         "header name") != NGX_OK
+        || ngx_http_lua_check_unsafe_string(r, value.data, value.len,
+                                            "header value") != NGX_OK)
+    {
+        return NGX_ERROR;
+    }
+
     dd("set header value: %.*s", (int) value.len, value.data);
 
     hv.hash = ngx_hash_key_lc(key.data, key.len);
