@@ -1,3 +1,9 @@
+nginx (1.18.0-0ubuntu1.5) focal; urgency=medium
+
+  * d/rules: add -moutline-atomics for arm64 (LP: #2024019).
+
+ -- Mitchell Dzurick <mitchell.dzurick@canonical.com>  Wed, 20 Mar 2024 15:11:50 -0700
+
 nginx (1.18.0-0ubuntu1.4) focal-security; urgency=medium
 
   * SECURITY UPDATE: memory corruption/disclosure issue

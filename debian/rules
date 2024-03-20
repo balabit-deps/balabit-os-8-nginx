@@ -35,6 +35,8 @@ $(foreach flavour,$(FLAVOURS),$(eval BUILDDIR_$(flavour) = $(CURDIR)/debian/buil
 DEB_BUILD_ARCH ?=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
 ifeq ($(DEB_BUILD_ARCH),sparc)
 	debian_cflags += -m32 -mcpu=ultrasparc
+else ifeq ($(DEB_BUILD_ARCH),arm64)
+	debian_cflags += -moutline-atomics
 endif
 
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
