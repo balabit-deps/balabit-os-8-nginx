@@ -1,3 +1,14 @@
+nginx (1.18.0-0ubuntu1.6) focal-security; urgency=medium
+
+  * SECURITY UPDATE: DoS in ngx_http_mp4_module
+    - debian/patches/CVE-2024-7347-1.patch: fixed buffer underread while
+      updating stsz atom in src/http/modules/ngx_http_mp4_module.c.
+    - debian/patches/CVE-2024-7347-2.patch: reject unordered chunks in stsc
+      atom in src/http/modules/ngx_http_mp4_module.c.
+    - CVE-2024-7347
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 10 Sep 2024 09:52:13 -0400
+
 nginx (1.18.0-0ubuntu1.5) focal; urgency=medium
 
   * d/rules: add -moutline-atomics for arm64 (LP: #2024019).
